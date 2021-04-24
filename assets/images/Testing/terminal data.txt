@@ -1,0 +1,39 @@
+
+root@OpenMPTCProuter:~# omr iperf
+-ash: omr: not found
+root@OpenMPTCProuter:~# omr-iperf
+Connecting to host 15.207.35.235, port 65400
+[  5] local 192.168.13.150 port 21497 connected to 15.207.35.235 port 65400
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.00   sec  1.87 MBytes  15.7 Mbits/sec    0   14.1 KBytes       
+[  5]   1.00-2.00   sec  1.95 MBytes  16.3 Mbits/sec    0   14.1 KBytes       
+[  5]   2.00-3.00   sec  1.99 MBytes  16.7 Mbits/sec    0   14.1 KBytes       
+[  5]   3.00-4.00   sec  1.89 MBytes  15.8 Mbits/sec    0   14.1 KBytes       
+[  5]   4.00-5.00   sec  1.98 MBytes  16.6 Mbits/sec    0   14.1 KBytes       
+[  5]   5.00-6.00   sec  1.99 MBytes  16.7 Mbits/sec    0   14.1 KBytes       
+[  5]   6.00-7.00   sec  1.89 MBytes  15.8 Mbits/sec    0   14.1 KBytes       
+[  5]   7.00-8.00   sec  1.97 MBytes  16.5 Mbits/sec    0   14.1 KBytes       
+[  5]   8.00-9.00   sec  2.07 MBytes  17.3 Mbits/sec    0   14.1 KBytes       
+[  5]   9.00-10.00  sec  1.86 MBytes  15.6 Mbits/sec    0   14.1 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-10.00  sec  19.4 MBytes  16.3 Mbits/sec    0             sender
+[  5]   0.00-10.03  sec  19.3 MBytes  16.1 Mbits/sec                  receiver
+
+iperf Done.
+----------------------------------------------------------------------------------------------------
+root@OpenMPTCProuter:~# omr-speedtest
+Download server list...
+Select best server...
+
+Done: url: http://speedtestmum.tataskybroadband.com:8080/speedtest/upload.php - host: speedtestmum.tataskybroadband.com:8080 - ping: 26
+Download test:
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 92.4M  100 92.4M    0     0  1228k      0  0:01:17  0:01:17 --:--:-- 1488k
+
+....................................................................................................
+
+
+
+

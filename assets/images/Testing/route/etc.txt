@@ -1,0 +1,53 @@
+root@OpenMPTCProuter:~# ls /etc/
+TZ                    crontabs              firewall.gre-tunnel   hosts                 lockdown              openwrt_release       protocols             shells                uhttpd.crt
+banner                dbus-1                firewall.omr-bypass   hotplug-preinit.json  luci-uploads          openwrt_version       rc.button             shinit                uhttpd.key
+banner.failsafe       device_info           firewall.omr-server   hotplug.d             mc                    opkg                  rc.common             snmp                  unbound
+bcm27xx-eeprom.conf   diag.sh               firewall.ss-rules     hotplug.json          modules-boot.d        opkg.conf             rc.d                  sqm                   urandom.seed
+board.d               dnsmasq.conf          firewall.user         igmpproxy.conf        modules.d             os-release            rc.local              ssl                   usb-mode.json
+board.json            dropbear              firewall.v2ray-rules  init.d                msmtprc               passwd                resolv.conf           sysctl.conf           vnstat.conf
+capabilities          e2fsck.conf           fstab                 inittab               mtab                  ppp                   services              sysctl.d              wgetrc
+chatscripts           ethers                gcom                  iproute2              openvpn               preinit               shadow                sysupgrade.conf       whois.conf
+config                ethertypes            group                 localtime             openvpn.user          profile               shadowsocks-libev     uci-defaults          xattr.conf
+
+
+
+
+
+root@OpenMPTCProuter:~# cat /etc/msmtprc 
+account default
+host smtp.gmail.com
+port 587
+auth on
+user joy.chittakkattu@gmail.com
+password Atlanta1@
+from joy.chittakkattu@gmail.com
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+tls on
+tls_starttls on
+
+
+
+root@OpenMPTCProuter:~# cat /etc/mtab 
+/dev/root / ext4 rw,noatime 0 0
+devtmpfs /dev devtmpfs rw,relatime,size=918496k,nr_inodes=229624,mode=755 0 0
+proc /proc proc rw,nosuid,nodev,noexec,noatime 0 0
+sysfs /sys sysfs rw,nosuid,nodev,noexec,noatime 0 0
+cgroup2 /sys/fs/cgroup cgroup2 rw,nosuid,nodev,noexec,relatime,nsdelegate 0 0
+tmpfs /tmp tmpfs rw,nosuid,nodev,noatime 0 0
+/dev/mmcblk0p1 /boot vfat rw,noatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0 0
+tmpfs /dev tmpfs rw,nosuid,relatime,size=512k,mode=755 0 0
+devpts /dev/pts devpts rw,nosuid,noexec,relatime,mode=600,ptmxmode=000 0 0
+debugfs /sys/kernel/debug debugfs rw,noatime 0 0
+none /sys/fs/bpf bpf rw,nosuid,nodev,noexec,noatime,mode=700 0 0
+mountd(pid5482) /tmp/run/blockd autofs rw,relatime,fd=7,pgrp=1,timeout=21474836510,minproto=5,maxproto=5,indirect 0 0
+
+
+root@OpenMPTCProuter:~# ls /
+.android/    dev/         lost+found/  rom/         tmp/
+bin/         etc/         mnt/         root/        usr/
+boot/        lib/         overlay/     sbin/        var/
+config/      lib64/       proc/        sys/         www/
+
+
+
+

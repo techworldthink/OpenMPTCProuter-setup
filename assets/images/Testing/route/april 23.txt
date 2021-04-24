@@ -1,0 +1,16 @@
+root@OpenMPTCProuter:~# ip route
+default via 10.255.255.1 dev tun0 
+default via 192.168.13.1 dev eth1 metric 3 
+default via 192.168.2.1 dev eth2 metric 4 
+default via 10.255.255.1 dev tun0 metric 1200 
+10.255.250.1 via 10.255.250.5 dev tun3 
+10.255.250.5 dev tun3 proto kernel scope link src 10.255.250.6 
+10.255.250.9 dev tun4 proto kernel scope link src 10.255.250.10 
+10.255.255.1 dev tun0 proto kernel scope link src 10.255.255.2 
+10.255.255.2 dev tun0 scope link metric 1200 
+15.207.35.235 
+	nexthop via 192.168.13.1 dev eth1 weight 1 
+	nexthop via 192.168.2.1 dev eth2 weight 1 
+127.0.0.0/8 dev lo proto static scope link metric 5 
+192.168.2.0/24 dev eth2 scope link metric 4 
+192.168.13.0/24 dev eth1 scope link metric 3 

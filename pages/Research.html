@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research</title>
+</head>
+<body>
+    <pre>
+        <h2>usefull commannds</h2>
+
+        omr-iperf
+        omr-speedtest
+        omr-test-speed eth1
+        omr-test-speed eth2
+        omr-test-speed usb1
+
+        <h2>Route commands</h2>
+
+        sudo apt-get install net-tools 
+        route 
+        route -n 
+        sudo route add default gw 169.254.0.0
+        sudo route add -host 192.168.1.51 reject
+        ip route 
+        route del default
+        sudo route add -net default gw 10.10.0.1 netmask 0.0.0.0 dev wlan0 metric 1
+        sudo route del -net default gw 10.10.0.1 netmask 0.0.0.0 dev wlan0 metric 0
+
+        <h3>route flags</h3>
+        U - route is up
+        G - specified gateway
+        D - Dynamically allocated
+        M - modified
+        R - reinstalled
+        ! - rejecting route
+
+
+
+    </pre>
+</body>
+</html>

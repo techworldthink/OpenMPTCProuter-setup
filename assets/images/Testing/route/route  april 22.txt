@@ -1,0 +1,162 @@
+root@OpenMPTCProuter:~# route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         10.255.255.1    0.0.0.0         UG    0      0        0 tun0
+default         192.168.13.1    0.0.0.0         UG    3      0        0 eth1
+default         192.168.2.1     0.0.0.0         UG    4      0        0 eth2
+default         10.255.255.1    0.0.0.0         UG    1200   0        0 tun0
+10.255.255.1    *               255.255.255.255 UH    0      0        0 tun0
+10.255.255.2    *               255.255.255.255 UH    1200   0        0 tun0
+15.207.35.235   192.168.13.1    255.255.255.255 UGH   0      0        0 eth1
+127.0.0.0       *               255.0.0.0       U     5      0        0 lo
+192.168.2.0     *               255.255.255.0   U     4      0        0 eth2
+192.168.13.0    *               255.255.255.0   U     3      0        0 eth1
+root@OpenMPTCProuter:~# route -rn
+route: unrecognized option: r
+BusyBox v1.31.1 () multi-call binary.
+
+Usage: route [{add|del|delete}]
+
+Edit kernel routing tables
+
+	-n	Don't resolve names
+	-e	Display other/more information
+	-A inet{6}	Select address family
+root@OpenMPTCProuter:~# route -e
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+default         10.255.255.1    0.0.0.0         UG        0 0          0 tun0
+default         192.168.13.1    0.0.0.0         UG        0 0          0 eth1
+default         192.168.2.1     0.0.0.0         UG        0 0          0 eth2
+default         10.255.255.1    0.0.0.0         UG        0 0          0 tun0
+10.255.255.1    *               255.255.255.255 UH        0 0          0 tun0
+10.255.255.2    *               255.255.255.255 UH        0 0          0 tun0
+15.207.35.235   192.168.13.1    255.255.255.255 UGH       0 0          0 eth1
+127.0.0.0       *               255.0.0.0       U         0 0          0 lo
+192.168.2.0     *               255.255.255.0   U         0 0          0 eth2
+192.168.13.0    *               255.255.255.0   U         0 0          0 eth1
+root@OpenMPTCProuter:~# route -A
+route: option requires an argument: A
+BusyBox v1.31.1 () multi-call binary.
+
+Usage: route [{add|del|delete}]
+
+Edit kernel routing tables
+
+	-n	Don't resolve names
+	-e	Display other/more information
+	-A inet{6}	Select address family
+root@OpenMPTCProuter:~# route 
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         10.255.255.1    0.0.0.0         UG    0      0        0 tun0
+default         192.168.13.1    0.0.0.0         UG    3      0        0 eth1
+default         192.168.2.1     0.0.0.0         UG    4      0        0 eth2
+default         10.255.255.1    0.0.0.0         UG    1200   0        0 tun0
+10.255.255.1    *               255.255.255.255 UH    0      0        0 tun0
+10.255.255.2    *               255.255.255.255 UH    1200   0        0 tun0
+15.207.35.235   192.168.13.1    255.255.255.255 UGH   0      0        0 eth1
+127.0.0.0       *               255.0.0.0       U     5      0        0 lo
+192.168.2.0     *               255.255.255.0   U     4      0        0 eth2
+192.168.13.0    *               255.255.255.0   U     3      0        0 eth1
+root@OpenMPTCProuter:~# 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+root@OpenMPTCProuter:~# ip route
+default via 10.255.255.1 dev tun0 
+default via 192.168.13.1 dev eth1 metric 3 
+default via 192.168.2.1 dev eth2 metric 4 
+default via 10.255.255.1 dev tun0 metric 1200 
+10.255.255.1 dev tun0 proto kernel scope link src 10.255.255.2 
+10.255.255.2 dev tun0 scope link metric 1200 
+15.207.35.235 
+	nexthop via 192.168.13.1 dev eth1 weight 10 
+	nexthop via 192.168.2.1 dev eth2 weight 1 
+127.0.0.0/8 dev lo proto static scope link metric 5 
+192.168.2.0/24 dev eth2 scope link metric 4 
+192.168.13.0/24 dev eth1 scope link metric 3 
+
+
+
+
+
+
+root@OpenMPTCProuter:~# route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         10.255.255.1    0.0.0.0         UG    0      0        0 tun0
+default         192.168.13.1    0.0.0.0         UG    3      0        0 eth1
+default         192.168.2.1     0.0.0.0         UG    4      0        0 eth2
+default         10.255.255.1    0.0.0.0         UG    1200   0        0 tun0
+10.255.255.1    *               255.255.255.255 UH    0      0        0 tun0
+10.255.255.2    *               255.255.255.255 UH    1200   0        0 tun0
+15.207.35.235   192.168.13.1    255.255.255.255 UGH   0      0        0 eth1
+127.0.0.0       *               255.0.0.0       U     5      0        0 lo
+192.168.2.0     *               255.255.255.0   U     4      0        0 eth2
+192.168.13.0    *               255.255.255.0   U     3      0        0 eth1
+
+
+
+root@OpenMPTCProuter:~# route -n
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         10.255.255.1    0.0.0.0         UG    0      0        0 tun0
+0.0.0.0         192.168.13.1    0.0.0.0         UG    3      0        0 eth1
+0.0.0.0         192.168.2.1     0.0.0.0         UG    4      0        0 eth2
+0.0.0.0         10.255.255.1    0.0.0.0         UG    1200   0        0 tun0
+10.255.255.1    0.0.0.0         255.255.255.255 UH    0      0        0 tun0
+10.255.255.2    0.0.0.0         255.255.255.255 UH    1200   0        0 tun0
+15.207.35.235   192.168.13.1    255.255.255.255 UGH   0      0        0 eth1
+127.0.0.0       0.0.0.0         255.0.0.0       U     5      0        0 lo
+192.168.2.0     0.0.0.0         255.255.255.0   U     4      0        0 eth2
+192.168.13.0    0.0.0.0         255.255.255.0   U     3      0        0 eth1
+
+
+
+root@OpenMPTCProuter:~# ip route
+default via 10.255.255.1 dev tun0 
+default via 192.168.13.1 dev eth1 metric 3 
+default via 192.168.2.1 dev eth2 metric 4 
+default via 10.255.255.1 dev tun0 metric 1200 
+10.255.255.1 dev tun0 proto kernel scope link src 10.255.255.2 
+10.255.255.2 dev tun0 scope link metric 1200 
+15.207.35.235 
+	nexthop via 192.168.13.1 dev eth1 weight 10 
+	nexthop via 192.168.2.1 dev eth2 weight 1 
+127.0.0.0/8 dev lo proto static scope link metric 5 
+192.168.2.0/24 dev eth2 scope link metric 4 
+192.168.13.0/24 dev eth1 scope link metric 3 
+
+
+
+
+
+root@OpenMPTCProuter:~# cat /proc/net/route 
+Iface	Destination	Gateway 	Flags	RefCnt	Use	Metric	Mask		MTU	Window	IRTT                                                       
+tun0	00000000	01FFFF0A	0003	0	0	0	00000000	0	0	0                                                                               
+eth1	00000000	010DA8C0	0003	0	0	3	00000000	0	0	0                                                                               
+eth2	00000000	0102A8C0	0003	0	0	4	00000000	0	0	0                                                                               
+tun0	00000000	01FFFF0A	0003	0	0	1200	00000000	0	0	0                                                                            
+tun0	01FFFF0A	00000000	0005	0	0	0	FFFFFFFF	0	0	0                                                                               
+tun0	02FFFF0A	00000000	0005	0	0	1200	FFFFFFFF	0	0	0                                                                            
+eth1	EB23CF0F	010DA8C0	0007	0	0	0	FFFFFFFF	0	0	0                                                                               
+lo	0000007F	00000000	0001	0	0	5	000000FF	0	0	0                                                                                 
+eth2	0002A8C0	00000000	0001	0	0	4	00FFFFFF	0	0	0                                                                               
+eth1	000DA8C0	00000000	0001	0	0	3	00FFFFFF	0	0	0   
+
+
+
