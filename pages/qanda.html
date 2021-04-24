@@ -1,0 +1,68 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>q and a</title>
+    <style>
+        h2 {
+            color: red;
+            font-family: monospace;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        h3 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-left: 1em;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        h6 {
+            border-top: 1px solid gray;
+            margin-top: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <h6>.</h6>
+
+    <h2>Q:is it possible to install other software packages inside this image? (i use Raspberry.) </h2>
+    <h3>OpenMPTCProuter is based on OpenWrt, so you can install all OpenWrt availables packages via System->Software
+        menu.
+    </h3>
+    <h6>.</h6>
+
+    <h2>Q:@Ysurac i was trying to install tcpdump, netstat -m, "https://github.com/nasa/multipath-tcp-tools/ " etc to
+        debug as suggested in http://multipath-tcp.org/pmwiki.php/Users/Tools. Can I scp to the ssh and install from the
+        external git repositories? Or any equivalents already available in omr package? I am still debugging a mptcp not
+        working issue,which I reported earlier on #1758 </h2>
+    <h3>You can't compile inside OpenMPTCProuter. </h3>
+    <h6>.</h6>
+
+    <h2>Q:is there any way to change matric value in routing table? </h2>
+    <h3>It's not a good idea if you want OpenMPTCProuter to work correctly. </h3>
+    <h6>.</h6>
+    <h2>Q:I have eth1 and eth2 interfaces. eth1 has matric value of 3 and eth2 has 4. when i run omr-speedtest more traffic go through eth1.so,
+        what should i need to do ? (for equally prioritize these two interfaces) </h2>
+    <h3>You can't. Priority go to lower latency interface. </h3>
+    <h6>.</h6>
+   
+    <h2>Q:can you please tell me the difference of master,backup,enable ? </h2>
+    <h3>Master is the connection used for initial proxy/vpn connection. Should be a stable connection.
+        Enable is a connection that can be aggregated.
+        Backup is a connection that should be used only when Master/Enabled connections are down. </h3>
+    <h6>.</h6>
+
+    <h2>Q: </h2>
+    <h3> </h3>
+    <h6>.</h6>
+    
+   
+
+</body>
+
+</html>
