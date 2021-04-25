@@ -1,0 +1,108 @@
+Johnson Wahni:
+root@OpenMPTCProuter:~# ifconfig
+eth0      Link encap:Ethernet  HWaddr DC:A6:32:35:4B:CF
+          inet addr:192.168.100.1  Bcast:192.168.100.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:3944 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:5752 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:733075 (715.8 KiB)  TX bytes:3953448 (3.7 MiB)
+
+eth1      Link encap:Ethernet  HWaddr 00:E1:03:00:09:1A
+          inet addr:192.168.13.150  Bcast:192.168.13.255  Mask:255.255.255.0
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:100
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+eth2      Link encap:Ethernet  HWaddr 00:E0:4C:53:44:58
+          inet addr:192.168.2.100  Bcast:192.168.2.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:822 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:100
+          RX bytes:0 (0.0 B)  TX bytes:36168 (35.3 KiB)
+
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:6219 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:6219 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:513082 (501.0 KiB)  TX bytes:513082 (501.0 KiB)
+
+tun0      Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00
+          inet addr:10.255.255.2  P-t-P:10.255.255.1  Mask:255.255.255.255
+          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1
+          RX packets:1640 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1889 errors:0 dropped:45 overruns:0 carrier:0
+          collisions:0 txqueuelen:100
+          RX bytes:486640 (475.2 KiB)  TX bytes:152149 (148.5 KiB)
+
+tun8      Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00
+          inet addr:10.255.250.6  P-t-P:10.255.250.5  Mask:255.255.255.255
+          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1
+          RX packets:555 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:639 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:100
+          RX bytes:91671 (89.5 KiB)  TX bytes:135393 (132.2 KiB)
+
+usb0      Link encap:Ethernet  HWaddr 4E:48:19:2F:79:1E
+          inet addr:192.168.42.44  Bcast:192.168.42.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:13286 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:17367 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:100
+          RX bytes:4403595 (4.1 MiB)  TX bytes:13837320 (13.1 MiB)
+
+root@OpenMPTCProuter:~# route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         10.255.255.1    0.0.0.0         UG    0      0        0 tun0
+default         192.168.13.1    0.0.0.0         UG    3      0        0 eth1
+default         192.168.2.1     0.0.0.0         UG    4      0        0 eth2
+default         192.168.42.129  0.0.0.0         UG    8      0        0 usb0
+default         10.255.255.1    0.0.0.0         UG    1200   0        0 tun0
+10.255.250.1    10.255.250.5    255.255.255.255 UGH   0      0        0 tun8
+10.255.250.5    *               255.255.255.255 UH    0      0        0 tun8
+10.255.250.6    *               255.255.255.255 UH    9      0        0 tun8
+10.255.255.1    *               255.255.255.255 UH    0      0        0 tun0
+10.255.255.2    *               255.255.255.255 UH    1200   0        0 tun0
+15.207.35.235   192.168.42.129  255.255.255.255 UGH   0      0        0 usb0
+127.0.0.0       *               255.0.0.0       U     5      0        0 lo
+192.168.2.0     *               255.255.255.0   U     4      0        0 eth2
+192.168.13.0    *               255.255.255.0   U     3      0        0 eth1
+192.168.42.0    *               255.255.255.0   U     8      0        0 usb0
+
+
+
+
+
+root@OpenMPTCProuter:~#
+root@OpenMPTCProuter:~# ip route
+default via 10.255.255.1 dev tun0
+default via 192.168.13.1 dev eth1 metric 3 linkdown
+default via 192.168.2.1 dev eth2 metric 4
+default via 192.168.42.129 dev usb0 metric 8
+default via 10.255.255.1 dev tun0 metric 1200
+10.255.250.1 via 10.255.250.5 dev tun8
+10.255.250.5 dev tun8 proto kernel scope link src 10.255.250.6
+10.255.250.6 dev tun8 scope link metric 9
+10.255.255.1 dev tun0 proto kernel scope link src 10.255.255.2
+10.255.255.2 dev tun0 scope link metric 1200
+15.207.35.235 via 192.168.42.129 dev usb0
+127.0.0.0/8 dev lo proto static scope link metric 5
+192.168.2.0/24 dev eth2 scope link metric 4
+192.168.13.0/24 dev eth1 scope link metric 3 linkdown
+192.168.42.0/24 dev usb0 scope link metric 8
+
+
+
+
+
+
+
+
+

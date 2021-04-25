@@ -1,0 +1,27 @@
+default         10.255.255.1    0.0.0.0         UG    0      0        0 tun0
+default         192.168.13.1    0.0.0.0         UG    3      0        0 eth1
+default         192.168.11.1    0.0.0.0         UG    4      0        0 eth2
+default         192.168.42.129  0.0.0.0         UG    8      0        0 usb0
+default         10.255.255.1    0.0.0.0         UG    1200   0        0 tun0
+
+
+192.168.100.150
+192.168.100.1
+
+
+pi@PI3BP1:~ $ sudo ssh 192.168.100.1
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ED25519 key sent by the remote host is
+SHA256:Ym7Nk5Z6bx7GZPYgGCHBbuGNt1BRKJTO652A02oiKmc.
+Please contact your system administrator.
+Add correct host key in /root/.ssh/known_hosts to get rid of this message.
+Offending ED25519 key in /root/.ssh/known_hosts:1
+  remove with:
+  ssh-keygen -f "/root/.ssh/known_hosts" -R "192.168.100.1"
+ED25519 host key for 192.168.100.1 has changed and you have requested strict checking.
+Host key verification failed.
