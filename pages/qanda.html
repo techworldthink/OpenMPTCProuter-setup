@@ -46,22 +46,33 @@
     <h2>Q:is there any way to change matric value in routing table? </h2>
     <h3>It's not a good idea if you want OpenMPTCProuter to work correctly. </h3>
     <h6>.</h6>
-    <h2>Q:I have eth1 and eth2 interfaces. eth1 has matric value of 3 and eth2 has 4. when i run omr-speedtest more traffic go through eth1.so,
+    <h2>Q:I have eth1 and eth2 interfaces. eth1 has matric value of 3 and eth2 has 4. when i run omr-speedtest more
+        traffic go through eth1.so,
         what should i need to do ? (for equally prioritize these two interfaces) </h2>
     <h3>You can't. Priority go to lower latency interface. </h3>
     <h6>.</h6>
-   
+
     <h2>Q:can you please tell me the difference of master,backup,enable ? </h2>
     <h3>Master is the connection used for initial proxy/vpn connection. Should be a stable connection.
         Enable is a connection that can be aggregated.
         Backup is a connection that should be used only when Master/Enabled connections are down. </h3>
     <h6>.</h6>
 
+    <h2>Q:I found tun0 has 2 entries in route table with different matric values (1200 , 0). why this happen? </h2>
+    <h3>It's not a problem. I don't remove default entry when I set the VPN as default route with metric 0. </h3>
+    <h6>.</h6>
+
+    <h2>Q:ifconfig and route commands give different matric values for all interfaces. Incase of ifconfig , matric
+        values of all interfaces is 1. But route commands give different values. Can you tell me why? </h2>
+    <h3>route table number is used as metric for each interface. </h3>
+    <h6>.</h6>
+
     <h2>Q: </h2>
     <h3> </h3>
     <h6>.</h6>
-    
-   
+
+
+
 
 </body>
 
